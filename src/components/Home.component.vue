@@ -1,13 +1,16 @@
 <template>
     <img src="" alt="SignLingo-Logo">
-    <div class="option-list">
-
-    </div>
+    <nav-list/>
 </template>
 
 <script>
+
+
+import NavList from "@/components/nav-list.component.vue";
+
 export default {
-    name: "Home"
+    name: "Home",
+    components: {NavList},
 }
 </script>
 
