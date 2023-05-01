@@ -18,10 +18,16 @@ defineProps({
 </script>
 
 <template>
-  <div>
-      <img :src="src" alt="nav-item-logo">
-      <router-link :to="to"> {{name}} </router-link>
-  </div>
+    <div class="nav-item">
+        <router-link :to="to">
+            <div class="container">
+                <img :src="src" alt="nav-item-logo">
+                <p>{{name}}</p>
+            </div>
+        </router-link>
+    </div>
+
+
 </template>
 
 <script>
@@ -33,8 +39,27 @@ export default {
 <style scoped>
 
 img {
-    margin-right: 20px;
     width: 50px;
+    float: left;
+    margin-right: 10px;
+}
+
+.nav-item {
+    padding: 20px 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.2s;
+    margin: 30px 10px;
+}
+
+.nav-item:hover{
+    background-color: rgba(71, 167, 255, 0.7);
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center
 }
 
 </style>
