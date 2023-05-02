@@ -19,18 +19,22 @@
         <p class="setting-property">Tipo de cuenta: Version gratis</p>
         <p class="change-option">Cambiar tipo de cuenta</p>
 
+        <div class="button-style">
+                <pv-button label="Guardar cambios"/>
+        </div>
+
+        <p class="change-option mod">Salir de la cuenta</p>
+
 
 </template>
 
 <script>
 export default {
-    name: "Settings"
+    name: "Settings",
 }
 </script>
 
 <style scoped>
-
-
 
 .settings-title{
     color: #000000;
@@ -64,5 +68,25 @@ export default {
     margin-bottom: 0.2em;
 }
 
+.button-style {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button{
+    background-color: #1E8F59;
+    color: white;
+    border: none;
+    padding: 0.7em 5em;
+    border-radius: 1.4em;
+    font-weight: 900;
+}
+
+.mod{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 </style>
