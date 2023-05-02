@@ -38,17 +38,28 @@ export default {
 
 <style scoped>
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 img {
     width: 50px;
     float: left;
     margin-right: 10px;
 }
 
+p {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 20px;
+}
+
 .nav-item {
-    padding: 20px 10px;
+    padding: 20px 20px;
     cursor: pointer;
     border-radius: 10px;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, opacity 0.2s;
     margin: 30px 10px;
 }
 
@@ -56,10 +67,13 @@ img {
     background-color: rgba(71, 167, 255, 0.7);
 }
 
+.nav-item:active{
+   opacity: 0.4;
+}
+
 .container{
     display: flex;
     align-items: center;
-    justify-content: center
 }
 
 </style>
