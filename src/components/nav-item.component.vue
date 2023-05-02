@@ -59,12 +59,16 @@ p {
     padding: 20px 20px;
     cursor: pointer;
     border-radius: 10px;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, opacity 0.2s;
     margin: 30px 10px;
 }
 
 .nav-item:hover{
     background-color: rgba(71, 167, 255, 0.7);
+}
+
+.nav-item:active{
+   opacity: 0.4;
 }
 
 .container{
