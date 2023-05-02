@@ -45,7 +45,7 @@ img {
 }
 
 .nav-item {
-    padding: 20px 10px;
+    padding: 20px 20px;
     cursor: pointer;
     border-radius: 10px;
     transition: background-color 0.2s;
