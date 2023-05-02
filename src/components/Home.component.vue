@@ -4,8 +4,8 @@
             <img src="src/imgs/sign-lingo-logo.png" alt="SignLingo-Logo">
             <nav-list/>
         </div>
-        <div>
-
+        <div class="flex-view">
+            <router-view></router-view>
         </div>
     </div>
 
@@ -32,12 +32,19 @@ img{
 .container{
     display: grid;
     grid-template-columns: 200px 1fr;
-    grid-column-gap: 20px;
+    grid-column-gap: 3em;
     justify-items: center;
 }
 
 .subContainer{
     border-right: 1px solid black;
+    height: 100%;
+}
+
+.flex-view{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 </style>
