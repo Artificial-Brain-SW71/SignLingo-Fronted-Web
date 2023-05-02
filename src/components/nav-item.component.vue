@@ -38,10 +38,21 @@ export default {
 
 <style scoped>
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 img {
     width: 50px;
     float: left;
     margin-right: 10px;
+}
+
+p {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 20px;
 }
 
 .nav-item {
@@ -59,7 +70,6 @@ img {
 .container{
     display: flex;
     align-items: center;
-    justify-content: center
 }
 
 </style>
