@@ -47,4 +47,9 @@ img{
     width: 100%;
 }
 
+.flex-view:has(.img-container){
+    justify-content: center;
+}
+
+
 </style>
