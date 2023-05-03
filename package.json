@@ -8,6 +8,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fullcalendar/core": "^6.1.6",
+    "@fullcalendar/daygrid": "^6.1.6",
+    "@fullcalendar/interaction": "^6.1.6",
+    "@fullcalendar/list": "^6.1.6",
+    "@fullcalendar/timegrid": "^6.1.6",
+    "@fullcalendar/vue3": "^6.1.6",
     "primevue": "^3.28.0",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6"
