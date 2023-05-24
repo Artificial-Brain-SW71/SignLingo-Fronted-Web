@@ -13,8 +13,8 @@
 
 <script>
 
-
 import NavList from "@/components/nav-list.component.vue";
+
 
 export default {
     name: "Home",
