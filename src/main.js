@@ -3,7 +3,7 @@ import App from './App.vue'
 
 import './assets/main.css'
 import "primeflex/primeflex.css";
-
+import "primevue/resources/primevue.min.css";
 
 import router from "@/router";
 import Sidebar from 'primevue/sidebar';
