@@ -27,7 +27,7 @@ defineProps({
                 <div class="container">
                     <img :src="src" alt="lvl-default-image">
                 </div>
-            <p class="letra">{{name}}</p>
+            <p class="letra flex-1">{{name}}</p>
         </router-link>
     </div>
 
@@ -86,7 +86,6 @@ img {
 }
 
 .letra {
-    //display: flex;
     align-items: center;
     font-size: 18px;
     padding: 0.7em 1.4em 0.7em 1.1em;
@@ -98,6 +97,7 @@ img {
     border-radius: 20em;
     font-weight: 900;
     text-align: center;
+    width:200px;
 }
 
 

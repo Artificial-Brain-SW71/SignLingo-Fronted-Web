@@ -1,13 +1,11 @@
 <template>
-    <div class="card">
-        <div class="flex flex-wrap card-container blue-container row-gap-2">
-            <div class="border-round w-12rem h-6rem bg-blue-500 text-white font-bold flex align-items-center justify-content-center">
-                 <nav-list/>
-            </div>
-            <div class="border-round w-12rem h-6rem bg-blue-500 text-white font-bold flex align-items-center justify-content-center">
-                 <router-view></router-view>
-            </div>
-         </div>
+    <div class="container">
+        <div class="subContainer">
+            <nav-list/>
+        </div>
+        <div class="flex-view">
+            <router-view></router-view>
+        </div>
     </div>
 </template>
 

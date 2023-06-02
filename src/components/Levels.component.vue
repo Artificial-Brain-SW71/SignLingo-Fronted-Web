@@ -1,4 +1,6 @@
 <template>
+    <div class="card-container yellow-container">
+        <div class="block bg-yellow-500 font-bold text-center p-4 border-round mb-3">
     <h1>Unidad 1</h1>
     <level-item name="Introducción" to="/level1" src="src/imgs/lvl1-image.png" level_color="#49A964"/>
     <div class="levels-container">
@@ -9,6 +11,8 @@
         <level-item name="Abecedario" to="/level4" src="src/imgs/lvl4-image.png" level_color="#49A964"/>
         <level-item name="Sentimientos" to="/level5" src="src/imgs/lvl5-image.png" level_color="#49A964"/>
     </div>
+        </div>
+        <div class="block bg-yellow-500 font-bold text-center p-4 border-round mb-3">
     <h1>Unidad 2</h1>
     <level-item name="Basico 1" to="/level6" src="src/imgs/lvl6-image.png" level_color="#49A964"/>
     <div class="levels-container">
@@ -20,7 +24,8 @@
         <level-item name="Objetos" to="/level10" src="src/imgs/lvl10-image.png" level_color="#49A964"/>
     </div>
     <level-item name="Basico 2" to="/level11" src="src/imgs/lvl11-image.png" level_color="#49A964"/>
-
+        </div>
+    </div>
 </template>
 
 <script>

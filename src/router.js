@@ -9,7 +9,6 @@ const routes =[
     { path: '/Levels', component: Levels},
     { path: '/Plus', component: Plus},
     { path: '/Settings', component: Settings},
-    { path: '/Levels', component: Levels},
     { path: '/Calender', component: Calender}
 ]
 
