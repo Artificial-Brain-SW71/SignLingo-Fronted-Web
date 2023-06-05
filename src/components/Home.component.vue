@@ -1,20 +1,19 @@
 <template>
-    <div class="card">
-        <div class="flex flex-wrap card-container blue-container row-gap-2">
-            <div class="border-round w-12rem h-6rem bg-blue-500 text-white font-bold flex align-items-center justify-content-center">
-                 <nav-list/>
-            </div>
-            <div class="border-round w-12rem h-6rem bg-blue-500 text-white font-bold flex align-items-center justify-content-center">
-                 <router-view></router-view>
-            </div>
-         </div>
+    <div class="container">
+        <div class="subContainer">
+            <nav-list/>
+        </div>
+        <div class="flex-view">
+            <router-view></router-view>
+        </div>
     </div>
+
 </template>
 
 <script>
 
-import NavList from "@/components/nav-list.component.vue";
 
+import NavList from "@/components/nav-list.component.vue";
 
 export default {
     name: "Home",
@@ -24,24 +23,30 @@ export default {
 
 <style scoped>
 
-.container{
+
+img {
+    width: 185px;
+    height: 169px;
+}
+
+.container {
     display: grid;
     grid-template-columns: 200px 1fr;
     grid-column-gap: 3em;
     justify-items: center;
 }
 
-.subContainer{
+.subContainer {
     height: 100%;
 }
 
-.flex-view{
+.flex-view {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-.flex-view:has(.img-container){
+.flex-view:has(.img-container) {
     justify-content: center;
 }
 
