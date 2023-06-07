@@ -18,8 +18,14 @@
         </ul>
     </div>
     <div class="Buttons-container">
-        <pv-button label="Comprar a $3.00" class="myButton"/>
-        <pv-button label="Volver"/>
+        <div class="flex flex-wrap justify-content-center card-container blue-container gap-3">
+            <div class="border-round w-15rem h-3rem text-white font-bold flex align-items-center justify-content-center">
+                <pv-button label="Comprar a $3.00" class="myButton"/>
+            </div>
+            <div class="border-round w-15rem h-3rem text-white font-bold flex align-items-center justify-content-center">
+                <pv-button label="Volver"/>
+            </div>
+        </div>
     </div>
 
 </template>
