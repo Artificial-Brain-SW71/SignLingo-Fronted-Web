@@ -22,17 +22,17 @@ defineProps({
 </script>
 
 <template>
-    <div class="level-item">
-        <router-link :to="to">
-                <div class="container">
-                    <img :src="src" alt="lvl-default-image">
-                </div>
-            <p class="letra flex-1">{{name}}</p>
+    <div class="p-grid level-item">
+      <div class="p-col">
+        <router-link :to="to" class="p-d-flex p-flex-column p-justify-center p-align-center">
+          <div class="container p-d-flex p-justify-center">
+            <img :src="src" alt="lvl-default-image">
+          </div>
+          <p class="letra">{{ name }}</p>
         </router-link>
+      </div>
     </div>
-
-
-</template>
+  </template>
 
 <script>
 export default {
@@ -53,8 +53,9 @@ p {
 img {
     width: 70px;
     float: left;
-    margin-left: 16px;
-    margin-top: 16px;
+    margin-left: 13px;
+    margin-top: 14px;
+    
 }
 
 
@@ -64,7 +65,7 @@ img {
     border-radius: 10px;
     transition: background-color 0.2s, opacity 0.2s;
     margin: auto;
-    width: 150px;
+    width: 220px;
 
 }
 
@@ -82,11 +83,10 @@ img {
     background-color: #BCEFB3;
     border-radius: 50%;
     border-style: solid;
-    margin-left: 22px;
+    margin: auto;
 }
 
 .letra {
-    align-items: center;
     font-size: 18px;
     padding: 0.7em 1.4em 0.7em 1.1em;
     color: white;
@@ -96,8 +96,7 @@ img {
     box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
     border-radius: 20em;
     font-weight: 900;
-    text-align: center;
-    width:200px;
+    width:180px;
 }
 
 
