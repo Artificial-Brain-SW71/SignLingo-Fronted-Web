@@ -5,9 +5,7 @@ import Plus from "@/components/Plus.component.vue";
 import Levels from "@/components/Levels.component.vue";
 import Calender from "@/components/calendar-view.component.vue";
 import Login from "@/components/Login.component.vue";
-
-import Level1 from "@/components/exercise-content/level1.component.vue";
-import Level2 from "@/components/exercise-content/level2.component.vue";
+import Exercise from "@/components/exercises.component.vue";
 
 const routes = [
   {
@@ -18,11 +16,11 @@ const routes = [
       { path: 'plus', component: Plus },
       { path: 'settings', component: Settings },
       { path: 'calender', component: Calender },
-      { path: 'level1', component: Level1 },
-      { path: 'level2', component: Level2 },
+      { path: 'exercise', component: Exercise },
     ]
   },
-  { path: '/login', component: Login }
+  { path: '/login', component: Login },
+  { path: '/', component: Login }
 ];
 
 const router = createRouter({
