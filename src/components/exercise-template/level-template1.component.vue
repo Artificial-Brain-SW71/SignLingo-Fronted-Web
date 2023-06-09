@@ -27,7 +27,7 @@ defineProps({
 
 <template>
 
-<div class="block font-bold text-center p-4 border-round mb-3">
+<div class="block font-bold text-center  border-round mb-3">
     <div class="flex flex-wrap justify-content-center card-container blue-container gap-3">
     <h1>Elegir la señal de {{señal}}</h1>
     </div>

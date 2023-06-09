@@ -34,22 +34,22 @@ export default {
                 {
                     label: 'Niveles',
                     link: 'src/imgs/levels.svg',
-                    route: 'Levels'
+                    route: '/home/levels'
                 },
                 {
                     label: 'Calendario',
                     link: 'src/imgs/calender.svg',
-                    route: '/Calender'
+                    route: '/home/calender'
                 },
                 {
                     label: 'Plus',
                     link: 'src/imgs/plus.svg',
-                    route: '/Plus'
+                    route: '/home/plus'
                 },
                 {
                     label: 'Ajustes',
                     link: 'src/imgs/settings.svg',
-                    route: '/settings'
+                    route: '/home/settings'
                 }
             ]
         };
