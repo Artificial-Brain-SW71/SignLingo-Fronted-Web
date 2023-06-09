@@ -5,7 +5,7 @@
     
     <script>
     
-    import LevelTemplate2 from '../level-templates/level-template2.component.vue';
+    import LevelTemplate2 from '../exercise-template/level-template2.component.vue';
     
     
     export default {

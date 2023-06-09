@@ -8,7 +8,7 @@ src4="https://img.freepik.com/foto-gratis/retrato-mujer-ensenando-lenguaje-senas
 
 <script>
 
-import LevelTemplate1 from '../level-templates/level-template1.component.vue';
+import LevelTemplate1 from '../exercise-template/level-template1.component.vue';
 
 
 export default {

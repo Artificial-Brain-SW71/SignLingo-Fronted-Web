@@ -2,7 +2,7 @@
     <div class="card">
             <div class="block font-bold text-center p-4 border-round mb-3">
                 <h1>Unidad 1</h1>
-                <div class="flex flex-wrap justify-content-center card-container blue-container gap-3">
+                <div class="flex flex-wrap justify-content-center card-container blue-container gap-3 bg-blue-500">
                     <level-item name="Introducción" to="/level1" src="src/imgs/lvl1-image.png" level_color="#49A964"/>
                 </div>
         <div class="flex flex-wrap justify-content-center card-container blue-container gap-3">
