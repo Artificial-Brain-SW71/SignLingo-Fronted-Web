@@ -7,7 +7,7 @@ const http = axios.create({
 export class ExerciseApiService{
 
     getAll(){
-        return http.get("Exercise/");
+        return http.get("Exercise");
     }
 
     getExerciseById(id){

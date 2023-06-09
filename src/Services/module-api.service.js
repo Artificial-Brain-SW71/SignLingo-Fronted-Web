@@ -6,7 +6,7 @@ const http = axios.create({
 
 export class ModuleApiService{
     getAll(){
-        return http.get("Module/");
+        return http.get("Module");
     }
 
     getModuleById(id){

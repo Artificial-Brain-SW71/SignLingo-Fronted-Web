@@ -13,4 +13,8 @@ export class UserApiService{
     getUserById(id){
         return http.get(`User/${id}`);
     }
+
+    createUser(body){
+        return http.post("User", body)
+    }
 }
