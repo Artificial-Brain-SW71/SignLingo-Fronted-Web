@@ -4,7 +4,7 @@ import Home from "@/components/Home.component.vue";
 
 <template>
 
-  <Home/>
+<router-view></router-view>
 
 </template>
 
