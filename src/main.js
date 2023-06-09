@@ -11,8 +11,12 @@ import router from "@/router";
 import Sidebar from 'primevue/sidebar';
 import Button from 'primevue/button';
 import Image from 'primevue/image';
+import InputText from 'primevue/inputtext';
 import ScrollPanel from 'primevue/scrollpanel';
 import PrimeVue from 'primevue/config';
+import Card from 'primevue/card';
+import CascadeSelect from 'primevue/cascadeselect';
+
 
 const app = createApp(App);
 
@@ -20,6 +24,9 @@ app.component("pv-button",Button)
 app.component("pv-sidebar",Sidebar)
 app.component("pv-scrollpanel",ScrollPanel)
 app.component("pv-image",Image)
+app.component("pv-inputtext",InputText)
+app.component("pv-card",Card)
+app.component("pv-cascadeselect",CascadeSelect)
 app.use(router)
 app.use(PrimeVue);
 

@@ -5,10 +5,6 @@ defineProps({
         type: String,
         required: true,
     },
-    to:{
-        type: String,
-        required: true,
-    },
     name: {
         type: String,
         required: true,
@@ -24,7 +20,7 @@ defineProps({
 <template>
     <div class="p-grid level-item">
       <div class="p-col">
-        <router-link :to="to" class="p-d-flex p-flex-column p-justify-center p-align-center">
+        <router-link to="/home/exercise" class="p-d-flex p-flex-column p-justify-center p-align-center">
           <div class="container p-d-flex p-justify-center">
             <img :src="src" alt="lvl-default-image">
           </div>
