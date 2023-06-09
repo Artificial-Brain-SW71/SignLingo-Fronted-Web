@@ -4,12 +4,12 @@ const http = axios.create({
     baseURL: "https://signlingo.azurewebsites.net/api/",
 })
 
-export class ModuleApiService{
+export class CityApiService{
     getAll(){
-        return http.get("Module");
+        return http.get("City")
     }
 
-    getModuleById(id){
-        return http.get(`Module/${id}`);
+    getCountryById(id){
+        return http.get(`City/${id}`)
     }
 }
