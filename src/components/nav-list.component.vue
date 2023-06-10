@@ -1,8 +1,17 @@
+<script setup>
+
+import SignLingoLogo from "@/imgs/sign-lingo-logo.png"
+
+const photos =[SignLingoLogo]
+
+</script>
+
+
 <template>
     <div :class="['sidebar', { 'sidebar-open': isOpen }]">
         <div class="card-container ">
         <div class="block sidebar-header ">
-            <pv-image src="src/imgs/sign-lingo-logo.png" width="200"  alt="SignLingo-Logo" v-if="isOpen"/>
+            <pv-image :src="photos[0]" width="200"  alt="SignLingo-Logo" v-if="isOpen"/>
             <pv-image src="/logo-mano.png" width="70" alt="SignLingo-Logo" v-else/>
         </div>
         <div class="block sidebar-content">
@@ -25,6 +34,11 @@
 </template>
 
 <script>
+
+import Niveles from "@/imgs/levels.svg"
+import Calender from "@/imgs/calender.svg"
+import Plus from "@/imgs/plus.svg"
+import Ajustes from "@/imgs/settings.svg"
 export default {
     name: "nav-list",
     data() {
@@ -33,22 +47,22 @@ export default {
             menuItems: [
                 {
                     label: 'Niveles',
-                    link: 'src/imgs/levels.svg',
+                    link: Niveles,
                     route: '/home/levels'
                 },
                 {
                     label: 'Calendario',
-                    link: 'src/imgs/calender.svg',
+                    link: Calender,
                     route: '/home/calender'
                 },
                 {
                     label: 'Plus',
-                    link: 'src/imgs/plus.svg',
+                    link: Plus,
                     route: '/home/plus'
                 },
                 {
                     label: 'Ajustes',
-                    link: 'src/imgs/settings.svg',
+                    link: Ajustes,
                     route: '/home/settings'
                 }
             ]
