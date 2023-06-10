@@ -1,3 +1,99 @@
+<script>
+import {CountryApiService} from "@/Services/country-api.service";
+import {ref} from "vue";
+import {CityApiService} from "@/Services/city-api.service";
+import {UserApiService} from "@/Services/user-api.service";
+
+export default {
+    name: "Login",
+
+    data() {
+        return {
+            registerActive: false,
+            emailLogin: "",
+            Birthdate: "",
+            passwordLogin: "",
+            nameReg:"",
+            lastnameReg:"",
+            emailReg: "",
+            passwordReg: "",
+            confirmReg: "",
+            emptyFields: false,
+            selectedCity: "",
+            countryApiService: new CountryApiService(),
+            cityApiService: new CityApiService(),
+            userApiService: new UserApiService(),
+            countries: [],
+            cities: []
+        };
+    },
+
+    methods: {
+        doLogin() {
+            if (this.emailLogin === "" || this.passwordLogin === "") {
+                this.emptyFields = true;
+            } else {
+                alert("You are now logged in");
+                this.$router.push('/home/levels');
+            }
+        },
+
+        doRegister() {
+            if (this.emailReg === "" || this.nameReg === "" || this.lastnameReg === "" || this.passwordReg === "" || this.confirmReg === "") {
+                this.emptyFields = true;
+            } else {
+
+                const city = this.cities.find(city =>{
+                    return city.city_Name === this.selectedCity.city_Name
+                })
+
+                const body = {
+                    "first_Name": this.nameReg,
+                    "last_Name": this.lastnameReg,
+                    "email": this.emailReg,
+                    "birthDate": this.Birthdate,
+                    "city": city.id
+                }
+
+
+                this.userApiService.createUser(body).then(response=>{
+                    if (response.status === 200){
+                        alert("Ahora esta registrado");
+                        this.$router.push('/home/levels');
+                    }
+                    else{
+                        alert("Formulario invalido");
+                        this.$router.push('/')
+                    }
+                })
+
+
+            }
+        }
+    },
+
+    beforeMount() {
+        this.countryApiService.getAll().then(response =>{
+            this.countries = response.data
+        })
+
+        this.cityApiService.getAll().then(response => {
+            this.cities = response.data
+
+
+            this.countries.forEach(country => {
+
+                country["cities"] = this.cities.filter(city =>{
+                    return city.country_name === country.country_name;
+                })
+
+            })
+        })
+
+    }
+}
+</script>
+
 <template>
       <div class="login-page p-d-flex p-jc-center p-ai-center ">
           <div class="col-lg-4 col-md-6 col-sm-8 mx-auto p-d-flex p-flex-column p-ai-center bg-green-400 border-round-xl">
@@ -17,9 +113,13 @@
               <form class="form-group">
                 <input v-model="nameReg" type="text" class="form-control" placeholder="Nombre" required>
                 <input v-model="lastnameReg" type="text" class="form-control" placeholder="Apellido" required>          
-                <input v-model="emailReg" type="email" class="form-control" placeholder="Correo" required>              
+                <input v-model="emailReg" type="email" class="form-control" placeholder="Correo" required>
+                <input v-model="Birthdate" type="date" class="form-control" required>
                 <input v-model="passwordReg" type="password" class="form-control" placeholder="Contraseña" required>
                 <input v-model="confirmReg" type="password" class="form-control" placeholder="Confirmar Contraseña" required>
+                <div class="card flex justify-content-center">
+                  <pv-cascadeselect v-model="selectedCity" :options="countries" optionLabel="city_Name" optionGroupLabel="country_name" :optionGroupChildren="['cities']" placeholder="Select a City"></pv-cascadeselect>
+                </div>
                 <button type="submit" class="button-68" role="button" @click="doRegister">Registrar</button>
                   <p>¿Ya tienes una cuenta?  
                   <a href="javascript:void(0)" @click="registerActive = !registerActive, emptyFields = false">Iniciar sesion</a>
@@ -29,47 +129,6 @@
           </div>
         </div>
 </template>
-
-
-<script>
-export default {
-   name: "Login",
-   
-   data() {
-      return {
-         registerActive: false,
-         emailLogin: "",
-         passwordLogin: "",
-         nameReg:"",
-         lastnameReg:"",
-         emailReg: "",
-         passwordReg: "",
-         confirmReg: "",
-         emptyFields: false
-      };
-   },
-   
-   methods: {
-      doLogin() {
-         if (this.emailLogin === "" || this.passwordLogin === "") {
-            this.emptyFields = true;
-         } else {
-            alert("You are now logged in");
-            this.$router.push('/home/levels');
-         }
-      },
-      
-      doRegister() {
-         if (this.emailReg === "" || this.nameReg === "" || this.lastnameReg === "" || this.passwordReg === "" || this.confirmReg === "") {
-            this.emptyFields = true;
-         } else {
-            alert("You are now registered");
-            this.$router.push('/home/levels');
-         }
-      }
-   }
-}
-</script>
 
 <style>
 p {

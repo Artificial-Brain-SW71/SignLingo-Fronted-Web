@@ -9,7 +9,7 @@ export class CityApiService{
         return http.get("City")
     }
 
-    getCountryById(id){
+    getCityById(id){
         return http.get(`City/${id}`)
     }
 }
