@@ -8,10 +8,6 @@ defineProps({
     name: {
         type: String,
         required: true,
-    },
-    level_color: {
-        type: String,
-        required: true,
     }
 })
 

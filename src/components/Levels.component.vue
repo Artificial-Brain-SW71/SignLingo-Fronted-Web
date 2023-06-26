@@ -1,85 +1,60 @@
 <template>
     <div class="card">
-            <div class="block font-bold text-center p-4 border-round mb-3">
-                <h1>Unidad 1</h1>
-                <div class="flex flex-wrap justify-content-center card-container blue-container gap-3">
-                    <level-item name="Introducción" src="src/imgs/lvl1-image.png" level_color="#49A964"/>
+        <div v-for="unit in uniqueUnits" :key="unit" class="block font-bold text-center p-4 border-round mb-3">
+            <h1>Unidad {{ unit }}</h1>
+            <div class="flex flex-wrap justify-content-center card-container blue-container gap-3" >
+                <div v-for="filteredModule in filteredModules(unit)" :key="filteredModule.id">
+                  <div class="border-round w-16rem h-14rem text-white font-bold flex align-items-center justify-content-center">
+                     <level-item :name="filteredModule.module" :src= "filteredModule.image"/>
+                  </div>
                 </div>
-        <div class="flex flex-wrap justify-content-center card-container blue-container gap-3">
-            <div class="border-round w-20rem h-14rem text-white font-bold flex align-items-center justify-content-center">
-                <level-item name="Números" src="src/imgs/lvl2-image.png" level_color="#49A964"/>
-            </div>
-            <div class="border-round w-20rem h-14rem text-white font-bold flex align-items-center justify-content-center">
-                <level-item name="Saludos" src="src/imgs/lvl3-image.png" level_color="#49A964"/>
-            </div>
-        </div>
-        <div class="flex flex-wrap justify-content-center card-container blue-container gap-3">
-            <div class="border-round w-20rem h-14rem text-white font-bold flex align-items-center justify-content-center">
-                <level-item name="Abecedario" src="src/imgs/lvl4-image.png" level_color="#49A964"/>
-            </div>
-            <div class="border-round w-20rem h-14rem text-white font-bold flex align-items-center justify-content-center">
-                <level-item name="Sentimientos" src="src/imgs/lvl5-image.png" level_color="#49A964"/>
-            </div>
-        </div>
+              </div>
+         </div>
     </div>
-
-    <div class="block font-bold text-center p-4 border-round mb-3">
-        <h1>Unidad 2</h1>
-        <div class="flex flex-wrap justify-content-center card-container blue-container gap-3">
-            <level-item name="Basico 1" src="src/imgs/lvl6-image.png" level_color="#49A964"/>
-        </div>
-        <div class="flex flex-wrap justify-content-center card-container blue-container gap-3">
-            <div class="border-round w-20rem h-14rem text-white font-bold flex align-items-center justify-content-center">
-                <level-item name="Familia" src="src/imgs/lvl7-image.png" level_color="#49A964"/>
-            </div>
-            <div class="border-round w-20rem h-14rem text-white font-bold flex align-items-center justify-content-center">
-                <level-item name="Animales" src="src/imgs/lvl8-image.png" level_color="#49A964"/>
-            </div>
-        </div>
-        <div class="flex flex-wrap justify-content-center card-container blue-container gap-3">
-            <div class="border-round w-20rem h-14rem text-white font-bold flex align-items-center justify-content-center">
-                <level-item name="Preguntas" src="src/imgs/lvl9-image.png" level_color="#49A964"/>
-            </div>
-            <div class="border-round w-20rem h-14rem text-white font-bold flex align-items-center justify-content-center">
-                <level-item name="Objetos" src="src/imgs/lvl10-image.png" level_color="#49A964"/>
-            </div>
-        </div>
-        <div class="flex flex-wrap justify-content-center card-container blue-container gap-3">
-            <level-item name="Basico 2" src="src/imgs/lvl11-image.png" level_color="#49A964"/>
-        </div>
-    </div>
-</div>
-
 </template>
 
 <script>
 import LevelItem from "@/components/levels-item.component.vue";
-import {UserModuleApiService} from "@/Services/usermodule-api.service";
+import { UserModuleApiService } from "@/Services/usermodule-api.service";
 
 export default {
-    name: "Levels",
-    components: {LevelItem},
+  name: "Prueba",
+  components: { LevelItem },
 
-    data() {
-        return {
-            userModules: [],
-            userModuleApiService: new UserModuleApiService()
-        }
-    },
+  data() {
+    return {
+      userModules: [],
+      userModuleApiService: new UserModuleApiService(),
+    };
+  },
 
-    beforeCreate(){
-        if (!window.sessionStorage.getItem("jwt")){
-            this.$router.push('/login');
-        }
-    },
-    beforeMount() {
-        this.userModuleApiService.getModulesByUserEmail(sessionStorage.getItem('email')).then(response => {
-            this.userModules = response.data;
-            console.log(this.userModules);
-        })
+  beforeCreate() {
+    if (!window.sessionStorage.getItem("jwt")) {
+      this.$router.push('/login');
     }
+  },
 
-}
+  beforeMount() {
+    this.userModuleApiService
+      .getModulesByUserEmail(sessionStorage.getItem('email'))
+      .then((response) => {
+        this.userModules = response.data;
+        console.log(this.userModules);
+      });
+  },
+
+  computed: {
+    uniqueUnits() {
+      return Array.from(new Set(this.userModules.map((module) => module.unit)));
+    },
+  },
+
+  methods: {
+    filteredModules(unit) {
+      return this.userModules.filter((module) => module.unit === unit);
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -94,5 +69,4 @@ h1{
     font-size: 40px;
     font-weight: 900;
 }
-
 </style>
