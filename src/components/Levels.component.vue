@@ -54,10 +54,31 @@
 
 <script>
 import LevelItem from "@/components/levels-item.component.vue";
+import {UserModuleApiService} from "@/Services/usermodule-api.service";
 
 export default {
     name: "Levels",
-    components: {LevelItem}
+    components: {LevelItem},
+
+    data() {
+        return {
+            userModules: [],
+            userModuleApiService: new UserModuleApiService()
+        }
+    },
+
+    beforeCreate(){
+        if (!window.sessionStorage.getItem("jwt")){
+            this.$router.push('/login');
+        }
+    },
+    beforeMount() {
+        this.userModuleApiService.getModulesByUserEmail(sessionStorage.getItem('email')).then(response => {
+            this.userModules = response.data;
+            console.log(this.userModules);
+        })
+    }
+
 }
 </script>
 

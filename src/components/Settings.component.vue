@@ -2,18 +2,18 @@
 
         <p class="settings-title">Ajustes de cuenta</p>
 
-        <p class="setting-property">Usuario: Upecino69</p>
+        <p class="setting-property">Usuario: {{ username }}</p>
 
         <p class="setting-property">Idioma: Español</p>
         <p class="change-option">Cambiar idioma</p>
 
-        <p class="setting-property">Correo: pan7@gmail.com</p>
+        <p class="setting-property">Correo: {{ email }}</p>
         <p class="change-option">Cambiar idioma</p>
 
-        <p class="setting-property">Numero: *** *** 987</p>
-        <p class="change-option">Cambiar numero</p>
+        <p class="setting-property">Cumpleaños: {{ birthdate }}</p>
+        <p class="change-option">Cambiar fecha</p>
 
-        <p class="setting-property">Contraseña: ****ga</p>
+        <p class="setting-property">Contraseña: *********</p>
         <p class="change-option">Cambiar contraseña</p>
 
         <p class="setting-property">Tipo de cuenta: Version gratis</p>
@@ -29,8 +29,32 @@
 </template>
 
 <script>
+import {UserApiService} from "@/Services/user-api.service";
+
 export default {
     name: "Settings",
+
+    data(){
+        return{
+            username: "",
+            email: "",
+            birthdate: "",
+            city: "",
+            userApiService: new UserApiService()
+        }
+    },
+
+    beforeMount(){
+        this.userApiService.getUserByEmail(sessionStorage.getItem("email")).then(response =>{
+            if (response.status === 200){
+                let user = response.data;
+                let birthdate = new Date(user.birthDay);
+                this.username = `${user.first_Name} ${user.last_Name}`;
+                this.email = user.email;
+                this.birthdate = `${birthdate.getDate()}/${birthdate.getMonth() + 1}/${birthdate.getFullYear()}`;
+            }
+        })
+    }
 }
 </script>
 
