@@ -1,47 +1,72 @@
 <template>
-    <div class="container">
-        <div class="subContainer">
-            <nav-list/>
-        </div>
-        <div class="flex-view">
-            <router-view></router-view>
-        </div>
+    <div class="card">
+        <div v-for="unit in uniqueUnits" :key="unit" class="block font-bold text-center p-4 border-round mb-3">
+            <h1>Unidad {{ unit }}</h1>
+            <div class="flex flex-wrap justify-content-center card-container blue-container gap-3" >
+                <div v-for="filteredModule in filteredModules(unit)" :key="filteredModule.id">
+                  <div class="border-round w-20rem h-14rem text-white font-bold flex align-items-center justify-content-center">
+                     <level-item :name="filteredModule.module" :src= "filteredModule.image"/>
+                  </div>
+                </div>
+              </div>
+         </div>
     </div>
 </template>
 
 <script>
-
-import NavList from "@/components/nav-list.component.vue";
-
+import LevelItem from "@/components/levels-item.component.vue";
+import { UserModuleApiService } from "@/Services/usermodule-api.service";
 
 export default {
-    name: "Home",
-    components: {NavList},
-}
+  name: "Prueba",
+  components: { LevelItem },
+
+  data() {
+    return {
+      userModules: [],
+      userModuleApiService: new UserModuleApiService(),
+    };
+  },
+
+  beforeCreate() {
+    if (!window.sessionStorage.getItem("jwt")) {
+      this.$router.push('/login');
+    }
+  },
+
+  beforeMount() {
+    this.userModuleApiService
+      .getModulesByUserEmail(sessionStorage.getItem('email'))
+      .then((response) => {
+        this.userModules = response.data;
+        console.log(this.userModules);
+      });
+  },
+
+  computed: {
+    uniqueUnits() {
+      return Array.from(new Set(this.userModules.map((module) => module.unit)));
+    },
+  },
+
+  methods: {
+    filteredModules(unit) {
+      return this.userModules.filter((module) => module.unit === unit);
+    },
+  },
+};
 </script>
 
 <style scoped>
 
-.container{
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    grid-column-gap: 3em;
-    justify-items: center;
-}
-
-.subContainer{
-    height: 100%;
-}
-
-.flex-view{
+.levels-container{
     display: flex;
-    flex-direction: column;
-    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
-.flex-view:has(.img-container){
-    justify-content: center;
+h1{
+    font-size: 40px;
+    font-weight: 900;
 }
-
-
 </style>
