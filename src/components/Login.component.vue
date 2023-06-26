@@ -33,8 +33,23 @@ export default {
             if (this.emailLogin === "" || this.passwordLogin === "") {
                 this.emptyFields = true;
             } else {
-                alert("You are now logged in");
-                this.$router.push('/home/levels');
+
+                const body = {
+                    "email": this.emailLogin,
+                    "password": this.passwordLogin
+                }
+
+                this.userApiService.Login(body).then(response => {
+                    if (response.status === 200){
+                        sessionStorage.setItem("jwt", response.data);
+                        sessionStorage.setItem("email", this.emailLogin);
+                        alert("Inicio de sesion exitoso");
+                        this.$router.push('/home/levels');
+                    }
+                    else{
+                        alert("Correo o contraseña invalida");
+                    }
+                });
             }
         },
 
@@ -51,14 +66,16 @@ export default {
                     "first_Name": this.nameReg,
                     "last_Name": this.lastnameReg,
                     "email": this.emailReg,
+                    "password": this.passwordReg,
                     "birthDate": this.Birthdate,
+                    "roles": "client",
                     "city": city.id
                 }
 
 
-                this.userApiService.createUser(body).then(response=>{
-                    if (response.status === 200){
-                        alert("Ahora esta registrado");
+                this.userApiService.SignUp(body).then(response=>{
+                    if (response.status === 201){
+                        alert("Registro exitoso");
                         this.$router.push('/home/levels');
                     }
                     else{
