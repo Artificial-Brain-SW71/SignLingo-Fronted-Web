@@ -2,7 +2,7 @@
     <div :class="['sidebar', { 'sidebar-open': isOpen }]">
         <div class="card-container ">
         <div class="block sidebar-header ">
-            <pv-image src="src/imgs/sign-lingo-logo.png" width="200"  alt="SignLingo-Logo" v-if="isOpen"/>
+            <pv-image src="https://cdn.discordapp.com/attachments/1103466916359712778/1103472142659616860/sign-lingo-logo.png" width="200"  alt="SignLingo-Logo" v-if="isOpen"/>
             <pv-image src="/logo-mano.png" width="70" alt="SignLingo-Logo" v-else/>
         </div>
         <div class="block sidebar-content">
@@ -33,22 +33,22 @@ export default {
             menuItems: [
                 {
                     label: 'Niveles',
-                    link: 'src/imgs/levels.svg',
+                    link: 'https://cdn.discordapp.com/attachments/1103466916359712778/1103475957865652274/image_31.png',
                     route: '/home/levels'
                 },
                 {
                     label: 'Calendario',
-                    link: 'src/imgs/calender.svg',
+                    link: 'https://cdn.discordapp.com/attachments/1103466916359712778/1103475957496557650/image_34.png',
                     route: '/home/calender'
                 },
                 {
                     label: 'Plus',
-                    link: 'src/imgs/plus.svg',
+                    link: 'https://cdn.discordapp.com/attachments/1103466916359712778/1103475956947099648/estrella_1.png',
                     route: '/home/plus'
                 },
                 {
                     label: 'Ajustes',
-                    link: 'src/imgs/settings.svg',
+                    link: 'https://cdn.discordapp.com/attachments/1103466916359712778/1103475958247337984/image_33.png',
                     route: '/home/settings'
                 }
             ]
