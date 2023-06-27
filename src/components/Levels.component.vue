@@ -39,7 +39,6 @@ export default {
       .getModulesByUserEmail(sessionStorage.getItem('email'))
       .then((response) => {
         this.userModules = response.data;
-        console.log(this.userModules);
       });
   },
 
