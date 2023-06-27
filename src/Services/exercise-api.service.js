@@ -17,4 +17,7 @@ export class ExerciseApiService{
         return http.get(`Exercise/${id}`);
     }
 
+    getExerciseByModuleName(moduleName){
+        return http.get(`Exercise/module-exercise?module=${moduleName}`)
+    }
 }
