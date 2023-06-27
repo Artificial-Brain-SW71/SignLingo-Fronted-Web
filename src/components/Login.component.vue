@@ -114,7 +114,8 @@ export default {
 <template>
       <div class="login-page p-d-flex p-jc-center p-ai-center ">
           <div class="col-lg-4 col-md-6 col-sm-8 mx-auto p-d-flex p-flex-column p-ai-center bg-green-400 border-round-xl">
-            <div v-if="!registerActive" class="card login p-col-12 p-md-6 h-auto w-29rem" v-bind:class="{ error: emptyFields }">
+            <div v-if="!registerActive" class="card login p-md-6 h-auto w-29rem" v-bind:class="{ error: emptyFields }">
+              <img src="https://media.discordapp.net/attachments/1087910032575844385/1095145191867961384/logo-png.png?width=671&height=671" class="logo">
               <h1>Iniciar sesion</h1>
               <form class="form-group">
                 <input v-model="emailLogin" type="email" class="form-control" placeholder="Correo" required>
@@ -126,6 +127,7 @@ export default {
             </div>
 
             <div v-else class="card register p-col-12 w-29rem h-auto p-md-6" v-bind:class="{ error: emptyFields }">
+              <img src="https://media.discordapp.net/attachments/1087910032575844385/1095145191867961384/logo-png.png?width=671&height=671" class="logo">
               <h1>Registrarse</h1>
               <form class="form-group">
                 <input v-model="nameReg" type="text" class="form-control" placeholder="Nombre" required>
@@ -150,6 +152,13 @@ export default {
 <style>
 p {
   line-height: 1rem;
+}
+
+.logo{
+  width: 200px;
+  height: 200px;
+  margin-left: 110px;
+  margin-bottom: -40px;
 }
 
 .card {
