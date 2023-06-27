@@ -4,7 +4,7 @@
             <h1>Unidad {{ unit }}</h1>
             <div class="flex flex-wrap justify-content-center card-container blue-container gap-3" >
                 <div v-for="filteredModule in filteredModules(unit)" :key="filteredModule.id">
-                  <div class="border-round w-16rem h-14rem text-white font-bold flex align-items-center justify-content-center">
+                  <div class="border-round w-20rem h-14rem text-white font-bold flex align-items-center justify-content-center">
                      <level-item :name="filteredModule.module" :src= "filteredModule.image"/>
                   </div>
                 </div>
@@ -39,6 +39,7 @@ export default {
       .getModulesByUserEmail(sessionStorage.getItem('email'))
       .then((response) => {
         this.userModules = response.data;
+        console.log(this.userModules);
       });
   },
 
