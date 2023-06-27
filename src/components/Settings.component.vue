@@ -1,29 +1,29 @@
 <template>
 
-        <p class="settings-title">Ajustes de cuenta</p>
+    <p class="settings-title">Ajustes de cuenta</p>
 
-        <p class="setting-property">Usuario: {{ username }}</p>
+    <p class="setting-property">Usuario: {{ username }}</p>
 
-        <p class="setting-property">Idioma: Español</p>
-        <p class="change-option">Cambiar idioma</p>
+    <p class="setting-property">Idioma: Español</p>
+    <p class="change-option">Cambiar idioma</p>
 
-        <p class="setting-property">Correo: {{ email }}</p>
-        <p class="change-option">Cambiar idioma</p>
+    <p class="setting-property">Correo: {{ email }}</p>
+    <p class="change-option">Cambiar idioma</p>
 
-        <p class="setting-property">Cumpleaños: {{ birthdate }}</p>
-        <p class="change-option">Cambiar fecha</p>
+    <p class="setting-property">Cumpleaños: {{ birthdate }}</p>
+    <p class="change-option">Cambiar fecha</p>
 
-        <p class="setting-property">Contraseña: *********</p>
-        <p class="change-option">Cambiar contraseña</p>
+    <p class="setting-property">Contraseña: *********</p>
+    <p class="change-option">Cambiar contraseña</p>
 
-        <p class="setting-property">Tipo de cuenta: Version gratis</p>
-        <p class="change-option">Cambiar tipo de cuenta</p>
+    <p class="setting-property">Tipo de cuenta: {{ type }}</p>
+    <p class="change-option">Cambiar tipo de cuenta</p>
 
-        <div class="button-style">
-                <pv-button label="Guardar cambios"/>
-        </div>
+    <div class="button-style">
+        <pv-button label="Guardar cambios"/>
+    </div>
 
-        <p class="change-option mod">Salir de la cuenta</p>
+    <p class="change-option mod" @click="logout">Salir de la cuenta</p>
 
 
 </template>
@@ -40,7 +40,15 @@ export default {
             email: "",
             birthdate: "",
             city: "",
+            type: "",
             userApiService: new UserApiService()
+        }
+    },
+
+    methods: {
+        logout(){
+            sessionStorage.clear()
+            this.$router.push('/login');
         }
     },
 
@@ -51,6 +59,7 @@ export default {
                 let birthdate = new Date(user.birthDay);
                 this.username = `${user.first_Name} ${user.last_Name}`;
                 this.email = user.email;
+                this.type = user.type;
                 this.birthdate = `${birthdate.getDate()}/${birthdate.getMonth() + 1}/${birthdate.getFullYear()}`;
             }
         })
