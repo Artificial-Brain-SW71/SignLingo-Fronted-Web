@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const http = axios.create({
-    baseURL: "https://signlingo.azurewebsites.net/api/",
+    baseURL: "https://artificialbrain.azurewebsites.net/api/",
     headers: {
         "Authorization": "Bearer " + window.sessionStorage.getItem('jwt')
     }
@@ -9,8 +9,8 @@ const http = axios.create({
 
 export class UserApiService{
 
-    getAll(){
-        return http.get("user/");
+    getAll() {
+        return http.get("user");
     }
 
     getUserById(id){

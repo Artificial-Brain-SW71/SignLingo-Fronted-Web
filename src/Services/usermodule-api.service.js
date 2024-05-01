@@ -2,7 +2,7 @@ import axios from "axios"
 import {UserApiService} from "@/Services/user-api.service";
 
 const http = axios.create({
-    baseURL: "https://signlingo.azurewebsites.net/api/",
+    baseURL: "https://artificialbrain.azurewebsites.net/api/",
     headers: {
         "Authorization": "Bearer " + window.sessionStorage.getItem('jwt')
     }

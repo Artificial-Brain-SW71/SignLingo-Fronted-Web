@@ -133,6 +133,7 @@ export default {
                 <input v-model="emailReg" type="email" class="form-control" placeholder="Correo" required>
                 <input v-model="Birthdate" type="date" class="form-control" required>
                 <input v-model="passwordReg" type="password" class="form-control" placeholder="Contraseña" required>
+                <div class="restriccion" >La contraseña debe ser con 8 caracteres minimo</div>
                 <input v-model="confirmReg" type="password" class="form-control" placeholder="Confirmar Contraseña" required>
                 <div class="card flex justify-content-center">
                   <pv-cascadeselect v-model="selectedCity" :options="countries" optionLabel="city_Name" optionGroupLabel="country_name" :optionGroupChildren="['cities']" placeholder="Select a City"></pv-cascadeselect>
@@ -243,7 +244,12 @@ p {
   opacity: 0;
 }
 
-
+.restriccion{
+  margin-top: -15px;
+  margin-bottom: 8px;
+  color: black;
+  font-weight: bold;
+}
 
 .login-page h1 {
   margin-bottom: 1.5rem;
