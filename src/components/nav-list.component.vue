@@ -2,8 +2,8 @@
     <div :class="['sidebar', { 'sidebar-open': isOpen }]">
         <div class="card-container ">
         <div class="block sidebar-header ">
-            <pv-image src="src/imgs/sign-lingo-logo.png" width="200"  alt="SignLingo-Logo" v-if="isOpen"/>
-            <pv-image src="/logo-mano.png" width="70" alt="SignLingo-Logo" v-else/>
+            <pv-image src="/imgs/sign-lingo-logo.png" width="200"  alt="SignLingo-Logo" v-if="isOpen"/>
+            
         </div>
         <div class="block sidebar-content">
             <ul class="menu">
@@ -33,22 +33,22 @@ export default {
             menuItems: [
                 {
                     label: 'Niveles',
-                    link: 'src/imgs/levels.svg',
+                    link: '/imgs/levels.svg',
                     route: '/home/levels'
                 },
                 {
                     label: 'Calendario',
-                    link: 'src/imgs/calender.svg',
+                    link: '/imgs/calender.svg',
                     route: '/home/calender'
                 },
                 {
                     label: 'Plus',
-                    link: 'src/imgs/plus.svg',
+                    link: '/imgs/plus.svg',
                     route: '/home/plus'
                 },
                 {
                     label: 'Ajustes',
-                    link: 'src/imgs/settings.svg',
+                    link: '/imgs/settings.svg',
                     route: '/home/settings'
                 }
             ]

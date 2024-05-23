@@ -6,6 +6,7 @@ import Levels from "@/components/Levels.component.vue";
 import Calender from "@/components/calendar-view.component.vue";
 import Login from "@/components/Login.component.vue";
 import Exercise from "@/components/exercises.component.vue";
+import Captcha from "@/components/captcha.component.vue";
 import Pruebas from "@/components/Pruebas.component.vue";
 
 const routes = [
@@ -21,7 +22,7 @@ const routes = [
     ]
   },
   { path: '/login', component: Login },
-  { path: '/', component: Login }
+  { path: '/', component: Captcha }
 ];
 
 const router = createRouter({

@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/SignLingo-Fronted-Web",
+    "public": "dist",
     "ignore": [
       "firebase.json",
       "**/.*",

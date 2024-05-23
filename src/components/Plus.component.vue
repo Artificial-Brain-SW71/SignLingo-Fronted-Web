@@ -1,6 +1,6 @@
 <template>
     <div class="img-container">
-        <img src="/src/imgs/plus.svg" alt="plus-logo">
+        <img src="/imgs/plus.svg" alt="plus-logo">
     </div>
     <p id="p1">
         Learnsign es una aplicación que busca ayudar a mas personas a aprender este hermoso lenguaje.
