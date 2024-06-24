@@ -16,7 +16,8 @@ import ScrollPanel from 'primevue/scrollpanel';
 import PrimeVue from 'primevue/config';
 import Card from 'primevue/card';
 import CascadeSelect from 'primevue/cascadeselect';
-
+import VuePlyr from 'vue-plyr'
+import 'vue-plyr/dist/vue-plyr.css'
 
 const app = createApp(App);
 
@@ -27,6 +28,7 @@ app.component("pv-image",Image)
 app.component("pv-inputtext",InputText)
 app.component("pv-card",Card)
 app.component("pv-cascadeselect",CascadeSelect)
+app.use(VuePlyr)
 app.use(router)
 app.use(PrimeVue);
 

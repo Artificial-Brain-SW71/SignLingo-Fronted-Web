@@ -4,9 +4,14 @@
       <div v-if="!registerActive" class="card login p-col-12 p-md-6 h-auto w-29rem" v-bind:class="{ error: emptyFields }">
         <h1>Iniciar sesión</h1>
         <form @submit.prevent="doLogin" class="form-group">
-          <input v-model="emailLogin" type="email" class="form-control" placeholder="Correo" required>
-          <input v-model="passwordLogin" type="password" class="form-control" placeholder="Contraseña" required>
-          <button type="button" class="button-68" role="button" @click="doLogin">Entrar</button>
+          <label for="email">Correo: </label>
+          <input v-model="emailLogin" type="email" class="form-control" placeholder="Correo" aria-describedby="Ingrese su correo electronico." title="Ingrese su correo electronico." required>
+
+          <label for="password">Contraseña: </label>
+          <input v-model="passwordLogin" type="password" class="form-control" placeholder="Contraseña" aria-describedby="Ingrese su contraseña." title="Ingrese su contraseña." required>
+          
+          <button type="button" class="button-68" role="button" @click="doLogin" aria-describedby="Iniciar sesión." title="Iniciar sesión.">Entrar</button>
+
           <p>Don't have an account? <a href="javascript:void(0)" @click="registerActive = !registerActive, emptyFields = false">Crear cuenta</a></p>
           <p><a href="javascript:void(0)">¿Olvidaste tu contraseña?</a></p>
         </form>
@@ -15,17 +20,29 @@
       <div v-else class="card register p-col-12 w-29rem h-auto p-md-6" v-bind:class="{ error: emptyFields }">
         <h1>Registrarse</h1>
         <form @submit.prevent="doRegister" class="form-group">
-          <input v-model="nameReg" type="text" class="form-control" placeholder="Nombre" required>
-          <input v-model="lastnameReg" type="text" class="form-control" placeholder="Apellido" required>
-          <input v-model="emailReg" type="email" class="form-control" placeholder="Correo" required>
-          <input v-model="Birthdate" type="date" class="form-control" required>
-          <input v-model="passwordReg" type="password" class="form-control" placeholder="Contraseña" required>
+          <label for="name">Nombre:</label>
+          <input v-model="nameReg" type="text" class="form-control" placeholder="Nombre" aria-describedby="Ingrese su nombre completo." title="Ingrese su nombre completo." required>
+          
+          <label for="lastname">Apellido: </label>
+          <input v-model="lastnameReg" type="text" class="form-control" placeholder="Apellido" aria-describedby="Ingrese su primer apellido completo." title = "Ingrese su primer apellido completo." required>
+
+          <label for="email">Correo: </label>
+          <input v-model="emailReg" type="email" class="form-control" placeholder="Correo" aria-describedby="Ingrese su correo electronico." title="Ingrese su correo electronico." required>
+
+          <label for="Birthdate">Fecha de nacimiento: </label>
+          <input v-model="Birthdate" type="date" class="form-control" title= "Ingrese su fecha de nacimiento." aria-describedby= "Ingrese su fecha de nacimiento." required>
+
+          <label for="password">Contraseña: </label>
+          <input v-model="passwordReg" type="password" class="form-control" placeholder="Contraseña" aria-describedby="Ingrese una contraseña valida." title="Ingrese una contraseña valida." required>
           <div class="restriccion">La contraseña debe ser con 8 caracteres mínimo</div>
-          <input v-model="confirmReg" type="password" class="form-control" placeholder="Confirmar Contraseña" required>
+          
+          <label for="confirmReg">Confirmar Contraseña: </label>
+          <input v-model="confirmReg" type="password" class="form-control" placeholder="Confirmar Contraseña" aria-describedby="Ingresa la misma contraseña." title="Ingrese la misma contraseña." required>
+          
           <div class="card flex justify-content-center">
-            <pv-cascadeselect v-model="selectedCity" :options="countries" optionLabel="city_Name" optionGroupLabel="country_name" :optionGroupChildren="['cities']" placeholder="Select a City"></pv-cascadeselect>
+            <pv-cascadeselect v-model="selectedCity" :options="countries" optionLabel="city_Name" optionGroupLabel="country_name" :optionGroupChildren="['cities']" placeholder="Select a City" title="Seleccione su cuidad." aria-describedby="Seleccione su cuidad."></pv-cascadeselect>
           </div>
-          <button type="button" class="button-68" role="button" @click="doRegister">Registrar</button>
+          <button type="button" class="button-68" role="button" title="Registrar una nueva cuenta." aria-describedby="Registrar una nueva cuenta." click="doRegister">Registrar</button>
           <p>¿Ya tienes una cuenta? <a href="javascript:void(0)" @click="registerActive = !registerActive, emptyFields = false">Iniciar sesión</a></p>
         </form>
       </div>
@@ -164,7 +181,7 @@ p {
 .login-page {
   align-items: center;
   display: flex;
-  height: 100vh;
+  height: 130vh;
 }
 
 .form-control{
