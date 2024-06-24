@@ -15,8 +15,8 @@ defineProps({
 
 <template>
     <div class="p-grid level-item">
-      <div class="p-col">
-        <router-link to="/home/exercise" class="p-d-flex p-flex-column p-justify-center p-align-center">
+        <div class="p-col" :aria-describedby="'Lección de ' + name" :title="'Lección de ' + name">
+            <router-link to="/home/exercise" class="p-d-flex p-flex-column p-justify-center p-align-center">
           <div class="container p-d-flex p-justify-center">
             <img :src="src" alt="lvl-default-image">
           </div>
