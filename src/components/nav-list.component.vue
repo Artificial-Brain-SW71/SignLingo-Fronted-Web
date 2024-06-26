@@ -8,7 +8,7 @@
         <div class="block sidebar-content">
             <ul class="menu">
                 <li v-for="item in menuItems" :key="item.label" :class="{'active': item.active}">
-                    <div class="nav-item">
+                    <div class="nav-item" :title=item.label>
                         <router-link :to="item.route">
                             <div class="container">
                                 <img :src="item.link" v-if="isOpen">

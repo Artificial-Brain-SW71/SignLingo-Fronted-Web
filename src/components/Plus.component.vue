@@ -20,14 +20,16 @@
     <div class="Buttons-container">
         <div class="flex flex-wrap justify-content-center card-container blue-container gap-3">
             <div class="border-round w-15rem h-3rem text-white font-bold flex align-items-center justify-content-center">
-                <pv-button label="Comprar a $3.00" class="myButton"/>
+                <pv-button label="Comprar a $3.00" class="myButton" aria-describedby="Comprar membresia a $3.00" title="Comprar membresia"/>
             </div>
             <div class="border-round w-15rem h-3rem text-white font-bold flex align-items-center justify-content-center">
                 <pv-button label="Volver"/>
             </div>
+            <div class="border-round w-15rem h-3rem text-white font-bold flex align-items-center justify-content-center">
+                <pv-button label="Adquirir gratis con CONADIS" aria-describedby="Adquirir gratis con CONADIS" title="Adquirir con CONADIS"/>
+            </div>
         </div>
     </div>
-
 </template>
 
 <script>
@@ -37,48 +39,47 @@ export default {
 </script>
 
 <style scoped>
-
-.img-container{
+.img-container {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 3em 3em;
 }
 
-img{
+img {
     width: 15%;
 }
 
-#p1{
-   text-align: center;
-   margin-bottom: 1px;
-}
-
-#p2{
-    text-align: center;
-}
-
-#p3{
+#p1 {
     text-align: center;
     margin-bottom: 1px;
 }
 
-.list-container{
+#p2 {
     text-align: center;
 }
 
-.myUL{
+#p3 {
+    text-align: center;
+    margin-bottom: 1px;
+}
+
+.list-container {
+    text-align: center;
+}
+
+.myUL {
     display: inline-block;
     text-align: left;
 }
 
-.Buttons-container{
+.Buttons-container {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 }
 
-button{
+button {
     background-color: #3D8AFF;
     color: white;
     font-weight: bold;
@@ -87,5 +88,4 @@ button{
     border-radius: 2em;
     cursor: pointer;
 }
-
 </style>
