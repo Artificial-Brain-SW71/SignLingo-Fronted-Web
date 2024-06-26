@@ -11,7 +11,7 @@
                 <h1>Introducción</h1>
             </div>
             <div class = "text-center font-bold"> 
-                <p>¡Bienvenidos a nuestra clase de Saludos y Expresiones en Lengua de Señas! Hoy vamos a explorar cómo comunicarnos de manera efectiva y respetuosa utilizando el lenguaje de señas. Los saludos y expresiones son fundamentales para establecer conexiones y mostrar cortesía en cualquier cultura, y aprenderlos en lengua de señas nos permitirá comunicarnos con la comunidad sorda de manera más inclusiva. A continuación, veremos un video proporcionado por el Arzobispado de Lima que nos enseñará las bases y la importancia de estos saludos en lengua de señas. ¡Esperamos que disfruten y aprendan mucho!</p>
+                <p class="Introduccion">¡Bienvenidos a nuestra clase de Saludos y Expresiones en Lengua de Señas! Hoy vamos a explorar cómo comunicarnos de manera efectiva y respetuosa utilizando el lenguaje de señas. Los saludos y expresiones son fundamentales para establecer conexiones y mostrar cortesía en cualquier cultura, y aprenderlos en lengua de señas nos permitirá comunicarnos con la comunidad sorda de manera más inclusiva. A continuación, veremos un video proporcionado por el Arzobispado de Lima que nos enseñará las bases y la importancia de estos saludos en lengua de señas. ¡Esperamos que disfruten y aprendan mucho!</p>
             </div>
         </div>
     </div>
@@ -22,14 +22,14 @@
         </vue-plyr>
     </div>
 
-    <level-template1 señal="elpepe" src1="https://img.freepik.com/foto-gratis/retrato-mujer-ensenando-lenguaje-senas_23-2148719697.jpg" 
+    <level-template1 señal="Buenas Noches" src1="https://img.freepik.com/foto-gratis/retrato-mujer-ensenando-lenguaje-senas_23-2148719697.jpg" 
     src2="https://img.freepik.com/foto-gratis/retrato-mujer-ensenando-lenguaje-senas_23-2148719690.jpg" 
     src3="https://img.freepik.com/foto-gratis/retrato-mujer-ensenando-lenguaje-senas_23-2148719685.jpg" 
     src4="https://img.freepik.com/foto-gratis/retrato-mujer-ensenando-lenguaje-senas_23-2148719733.jpg" >
     </level-template1>
 
     <level-template2 src="https://img.freepik.com/foto-gratis/retrato-mujer-ensenando-lenguaje-senas_23-2148719685.jpg" 
-        rpta1="1" rpta2="2" rpta3="3" rpta4="4" ></level-template2>
+        rpta1="Lengua de señas" rpta2="Buenos días" rpta3="Perdon" rpta4="Gracias" ></level-template2>
 </template>
 
 <script>
@@ -50,7 +50,7 @@ h1{
     font-size: 40px;
 }
 
-p{
+.Introduccion{
     padding: 20px;
     margin: 20px;
     font-size: 20px;

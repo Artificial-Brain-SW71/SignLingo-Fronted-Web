@@ -15,7 +15,7 @@ defineProps({
 
 <template>
     <div class="p-grid level-item">
-        <div class="p-col" :aria-describedby="'Lección de ' + name" :title="'Lección de ' + name">
+        <div class="p-col " :aria-describedby="'Lección de ' + name" :title="'Lección de ' + name">
             <router-link to="/home/exercise" class="p-d-flex p-flex-column p-justify-center p-align-center">
           <div class="container p-d-flex p-justify-center">
             <img :src="src" alt="lvl-default-image">
@@ -57,8 +57,6 @@ img {
     border-radius: 10px;
     transition: background-color 0.2s, opacity 0.2s;
     margin: auto;
-    width: 220px;
-
 }
 
 .level-item:hover{
